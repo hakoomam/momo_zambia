@@ -1,1 +1,6 @@
-{}
+{
+  "momo_zambia.bundle.js": [
+    "public/js/sales_invoice.js"
+  ],
+  "momo_zambia.bundle.css": []
+}

@@ -1,0 +1,11 @@
+{
+    "app_name": "momo_zambia",
+    "app_title": "MoMo Zambia",
+    "app_publisher": "Miyanda R. Hakooma",
+    "app_email": "mhakooma@antares.co.zm",
+    "app_description": "ERPNext integration for MTN MoMo Zambia including Collections, Disbursements, Portals, QR Codes, SMS Alerts",
+    "app_version": "1.0.0",
+    "frappe_version": "15.0.0",
+    "app_logo_url": "",
+    "license": "MIT"
+}

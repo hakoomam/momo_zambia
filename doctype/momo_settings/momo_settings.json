@@ -1,0 +1,46 @@
+{
+    "doctype": "DocType",
+    "name": "MoMo Settings",
+    "module": "momo_zambia",
+    "custom": 1,
+    "fields": [
+        {
+            "fieldname": "subscription_key",
+            "label": "Subscription Key",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "api_user",
+            "label": "API User",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "api_key",
+            "label": "API Key",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "target_environment",
+            "label": "Target Environment",
+            "fieldtype": "Select",
+            "options": "sandbox\nproduction",
+            "default": "sandbox"
+        },
+        {
+            "fieldname": "callback_url",
+            "label": "Callback URL",
+            "fieldtype": "Data"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1
+        }
+    ],
+    "istable": 0
+}

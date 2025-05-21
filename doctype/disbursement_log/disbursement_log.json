@@ -1,0 +1,41 @@
+{
+    "doctype": "DocType",
+    "name": "Disbursement Log",
+    "module": "momo_zambia",
+    "custom": 1,
+    "fields": [
+        {
+            "fieldname": "mobile",
+            "label": "Mobile Number",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "amount",
+            "label": "Amount",
+            "fieldtype": "Currency"
+        },
+        {
+            "fieldname": "reference_id",
+            "label": "Reference ID",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "external_id",
+            "label": "External ID",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "status",
+            "label": "Status",
+            "fieldtype": "Data"
+        }
+    ],
+    "permissions": [
+        {
+            "role": "System Manager",
+            "read": 1,
+            "write": 1
+        }
+    ],
+    "istable": 0
+}

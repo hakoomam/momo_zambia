@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Protected MoMo Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { padding: 10px; width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>My MoMo Transactions</h2>
+    <div id="login">
+        <input type="text" id="email" placeholder="Email (registered)">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
+    </div>
+    <div id="portal" style="display:none;">
+        <p>Welcome! Below is your payment history:</p>
+        <table border="1" width="100%">
+            <thead>
+                <tr><th>Date</th><th>Amount</th><th>Status</th><th>Ref ID</th></tr>
+            </thead>
+            <tbody id="history"></tbody>
+        </table>
+    </div>
+    <script>
+        function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            axios.post("/api/method/login", `usr=${email}&pwd=${password}`)
+                .then(() => {
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("portal").style.display = "block";
+                    fetch("/api/method/momo_zambia.momo_zambia.api.history.get_payment_history?mobile=" + email)
+                        .then(res => res.json())
+                        .then(data => {
+                            const tbody = document.getElementById("history");
+                            tbody.innerHTML = "";
+                            data.message.forEach(entry => {
+                                const row = document.createElement("tr");
+                                row.innerHTML = `<td>${entry.creation.split(' ')[0]}</td><td>${entry.amount}</td><td>${entry.status}</td><td>${entry.reference_id}</td>`;
+                                tbody.appendChild(row);
+                            });
+                        });
+                })
+                .catch(() => alert("Login failed. Make sure email and password are correct."));
+        }
+    </script>
+</body>
+</html>

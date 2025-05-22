@@ -1,4 +1,3 @@
-
 frappe.ui.form.on("Sales Invoice", {
     refresh(frm) {
         if (frm.doc.docstatus === 1 && frm.doc.outstanding_amount > 0) {

@@ -1,46 +1,38 @@
 {
-    "doctype": "DocType",
-    "name": "MoMo Settings",
-    "module": "momo_zambia",
-    "custom": 1,
-    "fields": [
-        {
-            "fieldname": "subscription_key",
-            "label": "Subscription Key",
-            "fieldtype": "Data",
-            "reqd": 1
-        },
-        {
-            "fieldname": "api_user",
-            "label": "API User",
-            "fieldtype": "Data",
-            "reqd": 1
-        },
-        {
-            "fieldname": "api_key",
-            "label": "API Key",
-            "fieldtype": "Data",
-            "reqd": 1
-        },
-        {
-            "fieldname": "target_environment",
-            "label": "Target Environment",
-            "fieldtype": "Select",
-            "options": "sandbox\nproduction",
-            "default": "sandbox"
-        },
-        {
-            "fieldname": "callback_url",
-            "label": "Callback URL",
-            "fieldtype": "Data"
-        }
-    ],
-    "permissions": [
-        {
-            "role": "System Manager",
-            "read": 1,
-            "write": 1
-        }
-    ],
-    "istable": 0
+  "doctype": "DocType",
+  "name": "MoMo Settings",
+  "module": "MoMo Zambia",
+  "custom": 1,
+  "fields": [
+    {
+      "label": "API User ID",
+      "fieldname": "api_user",
+      "fieldtype": "Data"
+    },
+    {
+      "label": "API Key",
+      "fieldname": "api_key",
+      "fieldtype": "Password"
+    },
+    {
+      "label": "Subscription Key",
+      "fieldname": "subscription_key",
+      "fieldtype": "Data"
+    },
+    {
+      "label": "Target Environment",
+      "fieldname": "target_environment",
+      "fieldtype": "Select",
+      "options": "sandbox\nproduction"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1
+    }
+  ]
 }
